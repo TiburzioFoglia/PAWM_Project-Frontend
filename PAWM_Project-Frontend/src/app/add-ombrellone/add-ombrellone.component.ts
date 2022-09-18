@@ -17,10 +17,6 @@ export class AddOmbrelloneComponent implements OnInit {
     console.log(this.listaOmbrelloni);
   }
 
-  /* addOmbrellone(id:number){
-    this.adminService.addOmbrellone(this.listaOmbrelloni[id].id);
-  } */
-
   public createGrid() {
     console.log(this.listaOmbrelloni.length);
     if (this.listaOmbrelloni.length == 0) {
@@ -49,9 +45,9 @@ export class AddOmbrelloneComponent implements OnInit {
 
   getColor(i: number){
     if(this.listaOmbrelloni[i].tipologia === null){
-      return "warn";
+      return "primary";
     }
-    return "primary";
+    return "warn";
   }
 
   getDisabled(i: number){

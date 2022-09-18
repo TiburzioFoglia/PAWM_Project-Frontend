@@ -1,1 +1,23 @@
-<p>delete-tipologia works!</p>
+<div class="container mt-5">
+    <div class="card" style="padding: 20px">
+      <form #deleteOmbrellone="ngForm" (ngSubmit)="deleteTipologia()">
+  
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Scegli tipologia</mat-label>
+          <mat-select (selectionChange)="changeTipologia($event.value)">
+            <mat-option
+              *ngFor="let tip of tipologie"
+              [value]="tip"
+            >
+              {{ tip.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <button class="w-100" type="submit" mat-raised-button color="primary">
+          Add Ombrellone
+        </button>
+      </form>
+    </div>
+  </div>
+  

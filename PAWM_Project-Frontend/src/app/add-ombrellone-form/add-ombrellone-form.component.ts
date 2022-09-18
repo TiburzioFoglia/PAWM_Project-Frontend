@@ -11,7 +11,7 @@ import { AdminUserService } from '../_services/admin-user.service';
 export class AddOmbrelloneFormComponent implements OnInit {
   tipologie: any[] = [];
   idPostoOmbrellone : number = -1;
-  tipologiaScelta: any ;
+  tipologiaScelta: any = "";
 
   constructor(private adminUserService: AdminUserService,private route: ActivatedRoute,private router: Router) {}
 
@@ -43,6 +43,10 @@ export class AddOmbrelloneFormComponent implements OnInit {
   }
 
   addOmbrellone() {
+    if(this.tipologiaScelta === ""){
+      alert("Scegli la tipologia");
+      return;
+    }
     this.adminUserService.addOmbrellone(this.tipologiaScelta,this.idPostoOmbrellone);
     this.router.navigate(['/admin']);
     

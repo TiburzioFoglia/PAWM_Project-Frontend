@@ -1,1 +1,52 @@
-<p>add-tipologia works!</p>
+<div class="container mt-5">
+  <div class="card" style="padding: 20px">
+    <form
+      #addTipologiaForm="ngForm"
+      (ngSubmit)="addTipologia(nomeTipologia.value, descrizioneTipologia.value, moltiplicatorePrezzo.value)"
+    >
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Nome</mat-label>
+        <input
+          #nomeTipologia
+          matInput
+          ngModel
+          name="nomeTipologia"
+          id="nomeTipologia"
+          placeholder="Nome tipologia"
+        />
+        <mat-hint>Nome Tipologia</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Descrizione</mat-label>
+        <input
+          #descrizioneTipologia
+          matInput
+          ngModel
+          name="descrizioneTipologia"
+          id="descrizioneTipologia"
+          placeholder="Descrizione tipologia"
+        />
+        <mat-hint>Descrizione Tipologia</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Moltiplicatore</mat-label>
+        <input
+          #moltiplicatorePrezzo
+          matInput
+          ngModel
+          type="number"
+          name="moltiplicatorePrezzo"
+          id="moltiplicatorePrezzo"
+          placeholder="1"
+        />
+        <mat-hint>Moltiplicatore Prezzo</mat-hint>
+      </mat-form-field>
+
+      <button class="w-100" type="submit" mat-raised-button color="primary">
+        Add Tipologia
+      </button>
+    </form>
+  </div>
+</div>
