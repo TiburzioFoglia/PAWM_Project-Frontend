@@ -5,29 +5,23 @@ import { UserService } from '../_services/user.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
+  hasReservations: boolean = false;
 
-  message: any;
-
-  constructor(private userService: UserService, private genericUserService: GenericUserService) { }
+  constructor(
+    private userService: UserService,
+    private genericUserService: GenericUserService
+  ) {}
 
   ngOnInit(): void {
-  }
-
-
-  hasReservations() : any {
-    if(localStorage.getItem("hasReservations") === null){
-      this.genericUserService.hasReservations();
-    }
-    if(localStorage.getItem("hasReservations")==="false"){
-      return false;
-    }
-    else{
-      return true;
+    this.genericUserService.hasReservations();
+    if (localStorage.getItem('hasReservations') === 'true') {
+      this.hasReservations = true;
+    } else {
+      this.hasReservations = false;
     }
   }
-
 
 }

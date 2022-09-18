@@ -103,6 +103,16 @@ export class AdminUserService {
     );
   }
 
+  getOmbrelloniPrenotatiInData(data : any){
+    return this.httpclient.get(
+      this.PATH_OF_API + '/spiaggia/listaOmbrelloniPrenotatiInData',
+      {
+        responseType: 'json',
+        params: new HttpParams().set('data', data),
+      }
+    );
+  }
+
   public getTipologieNonUtilizzate() {
     return this.httpclient.get(
       this.PATH_OF_API + '/spiaggia/listaTipologieOmbrelloneNonUtilizzate',

@@ -30,6 +30,9 @@ import { DeleteOmbrelloneComponent } from './delete-ombrellone/delete-ombrellone
 import { DeleteTipologiaComponent } from './delete-tipologia/delete-tipologia.component';
 import { CreateReservationComponent } from './create-reservation/create-reservation.component';
 import { AddOmbrelloneFormComponent } from './add-ombrellone-form/add-ombrellone-form.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { AddOmbrelloneFormComponent } from './add-ombrellone-form/add-ombrellone
     DeleteTipologiaComponent,
     CreateReservationComponent,
     AddOmbrelloneFormComponent,
+    ReservationListComponent,
     
   ],
   imports: [
@@ -62,10 +66,13 @@ import { AddOmbrelloneFormComponent } from './add-ombrellone-form/add-ombrellone
     MatInputModule,
     MatGridListModule,
     FlexLayoutModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,

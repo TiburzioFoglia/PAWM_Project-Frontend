@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="card text-center" style="padding: 20px">
+      <h1 style="color: #3f51b5; font-size: 200%; font-family: verdana">
+        <b>Prenotazioni</b>
+      </h1>
+  
+      <mat-grid-list cols="2" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let item of prenotazioni; index as i" >
+            <mat-card>
+                Prenotazione:<br>
+                {{item.dataInMillis}}<br>
+                Ombrellone: {{item.ombrellone.id}}<br>
+                Prezzo: {{item.prezzoTotale}} €
+            </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>

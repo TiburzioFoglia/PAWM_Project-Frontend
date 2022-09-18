@@ -1,1 +1,67 @@
-<p>create-reservation works!</p>
+<div class="container mt-5">
+  <div class="card" style="padding: 20px">
+    <form
+      #reservationForm="ngForm"
+      (ngSubmit)="next(dataPrenotazione.value, numeroLettini.value)"
+    >
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Choose a date</mat-label>
+        <input #dataPrenotazione matInput matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label> Numero lettini</mat-label>
+        <input
+          #numeroLettini
+          matInput
+          ngModel
+          type="number"
+          name="numeroLettini"
+          id="numeroLettini"
+          placeholder="2"
+        />
+        <mat-hint>Numero Lettini</mat-hint>
+      </mat-form-field>
+
+      <button class="w-100" type="submit" mat-raised-button color="primary">
+        Next
+      </button>
+    </form>
+  </div>
+</div>
+
+<div *ngIf=toggleSceltaOmbrellone   class="container mt-5">
+    <div class="card text-center" style="padding: 20px">
+      <h1 style="color: #3f51b5; font-size: 150%; font-family: verdana">
+        <b>Scegli l'ombrellone da prenotare</b>
+      </h1>
+      <mat-grid-list cols="10" rowHeight="2:1">
+        <mat-grid-tile *ngFor="let item of listaOmbrelloni; index as i">
+          <button
+            id="{{ i }}"
+            mat-flat-button
+            (click)=prenotaOmbrellone(i)
+            disabled="{{ getDisabled(i) }}"
+            color="{{ getColor(i) }}"
+          >
+            <img
+              *ngIf="isbeachImage(i)"
+              class="img_flex"
+              src="https://marevivo.it/wp-content/uploads/2021/03/sand-beach-as-background_102618-461.jpg"
+              alt="Logo"
+            />
+            <img
+              *ngIf="!isbeachImage(i)"
+              class="img_flex"
+              src="https://static.vecteezy.com/ti/vettori-gratis/p1/1890255-icona-stile-ombrellone-piatto-gratuito-vettoriale.jpg"
+              alt="Logo"
+            />
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </div>
+  </div>
