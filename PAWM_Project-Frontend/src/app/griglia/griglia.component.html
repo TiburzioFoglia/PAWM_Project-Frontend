@@ -1,10 +1,26 @@
 <div class="container mt-5">
-  <mat-grid-list cols="10" rowHeight="2:1">
-    <mat-grid-tile *ngFor="let item of listaOmbrelloni; index as i">
-      <button id="{{ i }}" mat-flat-button disabled="true" color="primary">
-        <img *ngIf="!getContenuto(i)" class="img_flex" src="https://marevivo.it/wp-content/uploads/2021/03/sand-beach-as-background_102618-461.jpg" alt="Logo">
-        <img *ngIf="getContenuto(i)" class="img_flex" src="https://static.vecteezy.com/ti/vettori-gratis/p1/1890255-icona-stile-ombrellone-piatto-gratuito-vettoriale.jpg" alt="Logo">  
-      </button>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="card text-center" style="padding: 20px">
+    <h1 style="color: #3f51b5; font-size: 200%; font-family: verdana">
+      <b>Spiaggia</b>
+    </h1>
+
+    <mat-grid-list cols="10" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let item of listaOmbrelloni; index as i">
+        <button id="{{ i }}" mat-flat-button disabled="true" color="primary">
+          <img
+            *ngIf="!getContenuto(i)"
+            class="img_flex"
+            src="https://marevivo.it/wp-content/uploads/2021/03/sand-beach-as-background_102618-461.jpg"
+            alt="Logo"
+          />
+          <img
+            *ngIf="getContenuto(i)"
+            class="img_flex"
+            src="https://static.vecteezy.com/ti/vettori-gratis/p1/1890255-icona-stile-ombrellone-piatto-gratuito-vettoriale.jpg"
+            alt="Logo"
+          />
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

@@ -47,6 +47,7 @@ import { AddOmbrelloneFormComponent } from './add-ombrellone-form/add-ombrellone
     DeleteTipologiaComponent,
     CreateReservationComponent,
     AddOmbrelloneFormComponent,
+    
   ],
   imports: [
     BrowserModule,

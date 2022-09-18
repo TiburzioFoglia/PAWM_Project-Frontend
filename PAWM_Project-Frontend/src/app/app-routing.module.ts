@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'deleteTipologia', component: DeleteTipologiaComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
   { path: 'createReservation', component: CreateReservationComponent, canActivate:[AuthGuard], data:{roles:['User']} },
   { path: 'addOmbrellone/form/:id', component: AddOmbrelloneFormComponent, canActivate:[AuthGuard], data:{roles:['Admin']} }
+  
 ];
 
 @NgModule({

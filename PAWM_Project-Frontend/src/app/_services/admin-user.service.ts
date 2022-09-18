@@ -75,6 +75,25 @@ export class AdminUserService {
       );
   }
 
+  deleteOmbrellone(idOmbrellone : number){
+    this.httpclient
+    .delete(
+      this.PATH_OF_API + '/administration/spiaggia/deleteOmbrellone',
+      {
+        responseType: 'json',
+        params: new HttpParams().set('id', idOmbrellone),
+      }
+    )
+    .subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
   public getTipologieConPrezzo() {
     return this.httpclient.get(
       this.PATH_OF_API + '/listino/listaTipologieOmbrelloneConPrezzo',
@@ -87,6 +106,15 @@ export class AdminUserService {
   public getTipologieNonUtilizzate() {
     return this.httpclient.get(
       this.PATH_OF_API + '/spiaggia/listaTipologieOmbrelloneNonUtilizzate',
+      {
+        responseType: 'json',
+      }
+    );
+  }
+
+  getOmbrelloniConPrenotazioni(){
+    return this.httpclient.get(
+      this.PATH_OF_API + '/spiaggia/listaOmbrelloniConPrenotazione',
       {
         responseType: 'json',
       }
