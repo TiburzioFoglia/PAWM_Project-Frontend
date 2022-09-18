@@ -1,6 +1,32 @@
 <div class="container mt-5">
-  <div class="card text-center" style="color: red; padding: 20px">
-    <h1>You are User</h1>
-    <h1>{{message}}</h1>
+  <div class="card text-center" style="color: primary; padding: 20px">
+    <h1 style="color: #3f51b5; font-size: 250%; font-family: verdana">
+      <b>User Dashboard</b>
+    </h1>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <button
+      class="w-50"
+      routerLink="/createReservation"
+      mat-flat-button
+      color="primary"
+    >
+      Reserve (!)
+    </button>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <button
+      *ngIf="hasReservations()"
+      class="w-50"
+      routerLink="/checkReservations"
+      mat-flat-button
+      color="primary"
+    >
+      Check reservations (!)
+    </button>
+
   </div>
 </div>
+

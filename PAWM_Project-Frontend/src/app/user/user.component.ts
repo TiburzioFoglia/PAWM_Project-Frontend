@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericUserService } from '../_services/generic-user.service';
 import { UserService } from '../_services/user.service';
 
 @Component({
@@ -10,22 +11,22 @@ export class UserComponent implements OnInit {
 
   message: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private genericUserService: GenericUserService) { }
 
   ngOnInit(): void {
-    this.forUser();
   }
 
-  forUser(){
-    this.userService.forUser().subscribe(
-      (response) => {
-        console.log(response);
-        this.message = response;
-      },
-      (error)=>{
-        console.log(error);
-      }
-    )
+
+  hasReservations() : any {
+    if(localStorage.getItem("hasReservations") === null){
+      this.genericUserService.hasReservations();
+    }
+    if(localStorage.getItem("hasReservations")==="false"){
+      return false;
+    }
+    else{
+      return true;
+    }
   }
 
 

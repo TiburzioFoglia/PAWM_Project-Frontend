@@ -1,0 +1,9 @@
+<div class="container mt-5">
+    <mat-grid-list cols="10" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let item of listaOmbrelloni; index as i">
+        <button id="{{ i }}" mat-raised-button [routerLink]="['/addOmbrellone/form',listaOmbrelloni[i].id]" disabled={{getDisabled(i)}} color={{getColor(i)}}>
+            Ciao
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>

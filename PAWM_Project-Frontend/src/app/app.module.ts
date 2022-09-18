@@ -15,6 +15,21 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { AddOmbrelloneComponent } from './add-ombrellone/add-ombrellone.component';
+import { AddTipologiaComponent } from './add-tipologia/add-tipologia.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { GrigliaComponent } from './griglia/griglia.component';
+import { DeleteOmbrelloneComponent } from './delete-ombrellone/delete-ombrellone.component';
+import { DeleteTipologiaComponent } from './delete-tipologia/delete-tipologia.component';
+import { CreateReservationComponent } from './create-reservation/create-reservation.component';
+import { AddOmbrelloneFormComponent } from './add-ombrellone-form/add-ombrellone-form.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +40,13 @@ import { UserService } from './_services/user.service';
     LoginComponent,
     HeaderComponent,
     ForbiddenComponent,
+    AddOmbrelloneComponent,
+    AddTipologiaComponent,
+    GrigliaComponent,
+    DeleteOmbrelloneComponent,
+    DeleteTipologiaComponent,
+    CreateReservationComponent,
+    AddOmbrelloneFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +54,14 @@ import { UserService } from './_services/user.service';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
+    FlexLayoutModule,
+    MatSelectModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
@@ -41,7 +71,7 @@ import { UserService } from './_services/user.service';
       useClass: AuthInterceptor,
       multi: true,
     },
-    UserService
+    UserService,
   ],
   bootstrap: [AppComponent],
 })

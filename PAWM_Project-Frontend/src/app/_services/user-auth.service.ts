@@ -7,6 +7,14 @@ export class UserAuthService {
 
   constructor() { }
 
+  public setUserName(user : string){
+    localStorage.setItem('userName', user);
+  }
+
+  public getUserName() : string {
+    return localStorage.getItem('userName')|| 'null' || '{}';
+  }
+
   public setRoles(roles:[]){
     localStorage.setItem('roles', JSON.stringify(roles));
   }

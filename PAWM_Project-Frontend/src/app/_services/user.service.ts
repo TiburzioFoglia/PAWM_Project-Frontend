@@ -22,13 +22,13 @@ export class UserService {
   }
 
   public forUser() {
-    return this.httpclient.get(this.PATH_OF_API + '/user/forUser', {
+    return this.httpclient.get(this.PATH_OF_API + '/forUser', {
       responseType: 'text',
     });
   }
 
   public forAdmin() {
-    return this.httpclient.get(this.PATH_OF_API + '/user/forAdmin', {
+    return this.httpclient.get(this.PATH_OF_API + '/forAdmin', {
       responseType: 'text',
     });
   }
@@ -51,4 +51,14 @@ export class UserService {
     }
     return isMatch;
   }
+
+public getViewBeach(){
+  return this.httpclient.get(this.PATH_OF_API + '/spiaggia/vista', {
+    responseType: 'json',
+  });
+}
+
+
+
+
 }
